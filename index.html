@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pepsi Website Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="sec">
+    <header>
+      <a href="#"><img src="img/logo.png" class="logo"></a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">What's New</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="textBox">
+        <h2>That's What<br><span>I like</span></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+        <a href="#">View All Products</a>
+      </div>
+      <div class="imgBox">
+        <img src="img/Pepsi001.png" class="Pepsi">
+      </div>
+    </div>
+    <ul class="thumb">
+      <li><img src="img/Pepsi001.png" onclick="imgSlider('img/pepsi001.png');changeBgColor('#0062be')"></li>
+      <li><img src="img/Pepsi002.png" onclick="imgSlider('img/pepsi002.png');changeBgColor('#e60c2c')"></li>
+      <li><img src="img/Pepsi003.png" onclick="imgSlider('img/pepsi003.png');changeBgColor('#1e1e1e')"></li>
+    </ul>
+    <ul class="sci">
+      <li><a href="#"><img src="img/facebook.png"></a></li>
+      <li><a href="#"><img src="img/twitter.png"></a></li>
+      <li><a href="#"><img src="img/instagram.png"></a></li>
+    </ul>
+
+    <div class="todo-list">
+      <h2>To-Do List</h2>
+      <input type="text" id="task-input" placeholder="Add a new task">
+      <button id="add-task-btn">Add Task</button>
+      <ul id="tasks">
+        <!-- List items will be dynamically added here -->
+      </ul>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    // Get necessary elements
+    const taskInput = document.getElementById("task-input");
+    const addTaskBtn = document.getElementById("add-task-btn");
+    const taskList = document.getElementById("tasks");
+
+    // Function to add a new task
+    function addTask() {
+      const taskText = taskInput.value.trim();
+
+      if (taskText !== "") {
+        // Create a new list item
+        const taskItem = document.createElement("li");
+        taskItem.textContent = taskText;
+
+        // Add the task to the list
+        taskList.appendChild(taskItem);
+
+        // Clear the input
+        taskInput.value = "";
+      }
+    }
+
+    // Add event listener to the "Add Task" button
+    addTaskBtn.addEventListener
